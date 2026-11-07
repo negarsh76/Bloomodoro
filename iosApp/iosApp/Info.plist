@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <!-- Replace with the REVERSED_CLIENT_ID from your GoogleService-Info.plist, e.g. com.googleusercontent.apps.123-abc -->
+                <string>REPLACE_WITH_REVERSED_CLIENT_ID</string>
+            </array>
+        </dict>
+    </array>
+    <key>UILaunchStoryboardName</key>
+    <string></string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>Bloomodoro can add your focus sessions to your calendar so they show up alongside your other plans.</string>
+</dict>
+</plist>

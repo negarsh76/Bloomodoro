@@ -1,0 +1,20 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() { return request.auth != null; }
+    function isOwner(uid) { return isSignedIn() && request.auth.uid == uid; }
+
+    match /users/{uid} {
+      allow read, update: if isOwner(uid);
+      allow create: if isOwner(uid);
+    }
+
+    // One backup document per user, holding the full local snapshot as a JSON string.
+    // Nobody but the owner can ever read or write their own backup.
+    match /backups/{uid} {
+      allow read, write: if isOwner(uid);
+    }
+  }
+}
